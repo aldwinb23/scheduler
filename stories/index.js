@@ -221,17 +221,17 @@ storiesOf("Appointment", module)
       onClose={action("onClose")}
     /> 
   ))
-  .add("Edit", () => ( 
+  .add("Create", () => ( 
     <Form
-    student="Captain Awesome"
-    interviewer={1}
     interviewers={interviewers}
     onSave={action("onSave")}
     onCancel={action("onCancel")}
     />
   ))
-  .add("Create", () => ( 
+  .add("Edit", () => ( 
     <Form
+    student="Aldwin"
+    interviewer={4}
     interviewers={interviewers}
     onSave={action("onSave")}
     onCancel={action("onCancel")}
