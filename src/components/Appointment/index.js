@@ -18,6 +18,9 @@ export default function Appointment(props) {
     props.interview ? SHOW : EMPTY
   );
 
+  console.log("props:", props)
+  console.log("propsInt:", props.interviewers);
+
   return (
     <article className="appointment">
       <Header time={props.time} />
@@ -28,7 +31,7 @@ export default function Appointment(props) {
           interviewer={props.interview.interviewer} />)}
       {mode === CREATE && (
       <Form
-        interviewers={[]}
+        interviewers={props.interviewers}
         onCancel={() => transition(EMPTY)}
          />)}
     </article>
