@@ -4,7 +4,7 @@ import "components/Application.scss";
 import Appointment from "./Appointment";
 import axios from "axios";
 import { getAppointmentsForDay, getInterview, getInterviewersForDay } from "helpers/selectors";
-
+import useVisualMode from "hooks/useVisualMode";
 
 export default function Application(props) {
   const [state, setState] = useState({
@@ -50,7 +50,7 @@ export default function Application(props) {
     };
     // setState({ ...state, appointments });
 
-    return axios.put(`/api/appointments/${id}`, {interview} )
+    return axios.put(`/api/appointments/${id}`, { interview })
       .then((res) => {
         setState({ ...state, appointments })
       })
