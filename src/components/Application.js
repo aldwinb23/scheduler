@@ -48,9 +48,14 @@ export default function Application(props) {
       ...state.appointments,
       [id]: appointment
     };
-    setState({ ...state, appointments });
+    // setState({ ...state, appointments });
+
+    return axios.put(`/api/appointments/${id}`, {interview} )
+      .then((res) => {
+        setState({ ...state, appointments })
+      })
   }
-  
+
 
   const arrAppts = dailyAppointments.map((appointment) => {
     const interview = getInterview(state, appointment.interview);
@@ -66,7 +71,7 @@ export default function Application(props) {
     )
   })
 
-  
+
 
 
 
