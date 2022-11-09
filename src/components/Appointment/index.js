@@ -87,11 +87,11 @@ export default function Appointment(props) {
         />)}
       {mode === SAVING && (
         <Status
-          message={"SAVING"}
+          message={"Saving"}
         />)}
       {mode === DELETING && (
         <Status
-          message={"DELETING"}
+          message={"Deleting"}
         />)}
       {mode === CONFIRM && (
         <Confirm
