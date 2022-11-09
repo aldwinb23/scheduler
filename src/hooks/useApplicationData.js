@@ -10,6 +10,8 @@ export default function useVisualMode() {
     appointments: {}
   });
 
+  const setDay = day => setState({ ...state, day });
+
 
   useEffect(() => {
     Promise.all([
@@ -21,6 +23,21 @@ export default function useVisualMode() {
     });
   }, []
   )
+
+  function updateSpots(state, appointments) {
+    return (
+      state.days.map((day) => {
+        if(day.name === state.day) {
+          return {
+            ...day,
+            spots: day.appointments.map((id) => (appointments[id])).filter(({interview}) => {
+              return !interview
+            }).length          
+          };
+        }
+        return day;
+      })
+  )}
 
 
   function bookInterview(id, interview) {
@@ -35,7 +52,7 @@ export default function useVisualMode() {
 
     return axios.put(`/api/appointments/${id}`, { interview })
       .then((res) => {
-        setState({ ...state, appointments })
+        setState({ ...state, appointments, days: updateSpots(state, appointments) })
       })
   }
 
@@ -52,11 +69,13 @@ export default function useVisualMode() {
 
     return axios.delete(`/api/appointments/${id}`)
       .then((res) => {
-        setState({ ...state, appointments })
+        setState({ ...state, appointments, days: updateSpots(state, appointments) })
       })
   }
 
-  const setDay = day => setState({ ...state, day });
+    // const test = ({ ...state.days[0] })    
+    // console.log("test.spots")
+    // console.log(test.spots)
 
 
   return { state, setDay, bookInterview, cancelInterview }

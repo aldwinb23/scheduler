@@ -56,8 +56,7 @@ export function getInterviewersForDay(state, day) {
   for (let dayObj of state.days) {
     // console.log("days:", dayObj)
     if (dayObj.name === day) {
-      // interviewers = dayObj.appointments;
-      interviewers = dayObj.interviewers;
+      interviewers = dayObj.interviewers;    // app only
       // console.log("ints:", interviewers);
     }
   }
