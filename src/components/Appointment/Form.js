@@ -52,7 +52,6 @@ export default function Form(props){
         <InterviewerList 
           interviewers={props.interviewers}
           value={interviewer}
-          // onChange={(event) => setInterviewer(event.target.value)} // ask mentor to explain
           onChange={setInterviewer}
         />
       </section>

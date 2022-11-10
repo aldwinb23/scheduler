@@ -26,9 +26,6 @@ export default function Appointment(props) {
     props.interview ? SHOW : EMPTY
   );
 
-  // console.log("props:", props)
-  // console.log("propsInt:", props.interviewers);
-
   function save(name, interviewer) {
     const interview = {
       student: name,
@@ -56,17 +53,6 @@ export default function Appointment(props) {
         transition(ERROR_DELETE, true);
       })
   }
-
-  // function destroy(event) {
-  //   transition(DELETING, true);
-  //   props
-  //    .cancelInterview(props.id)
-  //    .then(() => transition(EMPTY))
-  //    .catch(error => transition(ERROR_DELETE, true));
-  //  }
-
-
-  // console.log("interview:", props.interview)
 
   return (
     <article className="appointment" data-testid="appointment">
@@ -121,6 +107,3 @@ export default function Appointment(props) {
   )
 
 }
-
-
-

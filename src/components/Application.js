@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import DayList from "./DayList";
 import "components/Application.scss";
@@ -14,8 +15,8 @@ export default function Application(props) {
     cancelInterview
   } = useApplicationData();
 
-  const interviewers = getInterviewersForDay(state, state.day)
-  const dailyAppointments = getAppointmentsForDay(state, state.day)
+  const interviewers = getInterviewersForDay(state, state.day);
+  const dailyAppointments = getAppointmentsForDay(state, state.day);
 
   const arrAppts = dailyAppointments.map((appointment) => {
     const interview = getInterview(state, appointment.interview);

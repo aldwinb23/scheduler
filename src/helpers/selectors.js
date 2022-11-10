@@ -10,26 +10,6 @@ export function getAppointmentsForDay(state, day) {
 }
 
 
-// export function getInterviewersForDay(state, day) {
-//   const objDay = state.days.find(x => x.name === day);
-
-//   if (!objDay) { return []; }
-
-//   console.log("objDay:", objDay.name)
-
-//   const appy = state.appointments[5].interview;
-
-//   console.log("appy:", appy);
-
-//   const test = appy.interviewer;
-
-//   console.log("interviewer id:", test);
-
-//   // return objDay.appointments.map(appointmentId => state.appointments[appointmentId])
-//   console.log("test:", objDay.appointments.map(appointmentId => state.appointments[appointmentId]));
-// }
-
-
 export function getInterview(state, interview) {
   if (!interview) {
     return null;
@@ -47,23 +27,16 @@ export function getInterview(state, interview) {
 }
 
 
-
 export function getInterviewersForDay(state, day) {
-  
   let interviewers = [];
-  // console.log("day:", day)
 
   for (let dayObj of state.days) {
-    // console.log("days:", dayObj)
     if (dayObj.name === day) {
-      interviewers = dayObj.interviewers;    // app only
-      // console.log("ints:", interviewers);
+      interviewers = dayObj.interviewers;
     }
   }
 
   const interviewerList = interviewers.map((id) => {
-    // console.log("id:", id)
-    // console.log("stateint:", state.interviewers);
     for (let interviewer in state.interviewers) {
       if (Number(interviewer) === id) {
         return state.interviewers[interviewer];
@@ -75,27 +48,3 @@ export function getInterviewersForDay(state, day) {
   return interviewerList;
 
 };
-
-
-// export function getInterviewersForDay(state, day) {
-  
-//   let interviewers = [];
-
-//   for (let dayObj of state.days) {
-//     if (dayObj.name === day) {
-//       interviewers = dayObj.interviewers;
-//     }
-//   }
-//   console.log("ints:", interviewers);
-//   let interviewerList = interviewers.map((id) => {
-//     for (let interviewer in state.interviewers) {
-//       if (Number(interviewer) === id) {
-//         return state.interviewers[interviewer];
-//       }
-//     } 
-//     return null;
-//   })
-
-//   return interviewerList;
-
-// };

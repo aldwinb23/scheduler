@@ -73,10 +73,5 @@ export default function useVisualMode() {
       })
   }
 
-    // const test = ({ ...state.days[0] })    
-    // console.log("test.spots")
-    // console.log(test.spots)
-
-
   return { state, setDay, bookInterview, cancelInterview }
 }

@@ -10,21 +10,19 @@ export default function useVisualMode(initial) {
       setMode(newMode);
     } else {
       setMode(newMode);
-      // setHistory([...history, newMode]);
       setHistory(prev => ([...prev, newMode]))
     }
   }
 
   function back() {
-    let arrHistory = [...history]; // 1 , 2, "3"
+    let arrHistory = [...history];
     if (arrHistory.length > 1) {
-      setMode(() => arrHistory[(arrHistory.length - 1)]);  // 1, "2", 3
-      arrHistory.pop() // 1, 2
+      setMode(() => arrHistory[(arrHistory.length - 1)]);
+      arrHistory.pop()
 
     }
-    setHistory(() => arrHistory); // 1, "2"
-    // setHistory(prev => ([...prev, arrHistory]))
-
+    setHistory(() => arrHistory);
+    
   }
 
   return { mode, transition, back };
