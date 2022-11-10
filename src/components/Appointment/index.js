@@ -95,7 +95,7 @@ export default function Appointment(props) {
         />)}
       {mode === CONFIRM && (
         <Confirm
-          message={"Are you sure you want to delete?"}
+          message={"Are you sure you would like to delete?"}
           onCancel={() => back()}
           onConfirm={deleteI}
         />)}
@@ -114,7 +114,7 @@ export default function Appointment(props) {
         />)}
       {mode === ERROR_DELETE && (
         <Error
-          message={"Deleting does not compute!"}
+          message={"Error does not compute!"}
           onClose={() => back()}
         />)}
     </article>
