@@ -5,9 +5,18 @@ Interview Scheduler is a single page application (SPA) was built using React. Th
 Jests, storybook, and cypress tests are used through the development of the project.
 
 
+
+
 !["create an interview"](https://github.com/aldwinb23/scheduler/blob/master/docs/create-new-interview.jpg)
 !["hover to edit or delete"](https://github.com/aldwinb23/scheduler/blob/master/docs/hover-to-delete-edit.jpg)
 !["deleting interview"](https://github.com/aldwinb23/scheduler/blob/master/docs/delete-appointment.jpg)
+
+
+## Dependencies
+
+- axios
+- @testing-library/react-hooks
+- react-test-renderer
 
 
 ## Setup
